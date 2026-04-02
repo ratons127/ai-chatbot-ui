@@ -1,0 +1,113 @@
+/* ============================================================
+   Betopia AI – Brand CSS
+   Company: Betopia Group | betopiagroup.com
+   Primary: #000000 (Black)  Accent: #EF8B42 (Orange)
+   ============================================================ */
+
+/* ── CSS Variables ─────────────────────────────────────────── */
+:root {
+  --betopia-black:       #000000;
+  --betopia-orange:      #EF8B42;
+  --betopia-orange-dark: #E67D2E;
+  --betopia-orange-mid:  #FE6E00;
+  --betopia-orange-light:#F79549;
+  --betopia-orange-50:   #FFF3E8;
+}
+
+/* ── Sidebar logo icon – transparent background ─────────────── */
+.sidebar-new-chat-icon {
+  border-radius: 4px !important;
+  object-fit: contain !important;
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+/* Sidebar app name – orange accent */
+#sidebar-webui-name {
+  color: var(--betopia-orange) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em;
+}
+html.dark #sidebar-webui-name {
+  color: var(--betopia-orange-light) !important;
+}
+
+/* ── Auth / login page logo – transparent background ────────── */
+#auth-page #logo,
+#auth-container #logo {
+  border-radius: 0 !important;
+  object-fit: contain !important;
+  background: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Sign-in / sign-up submit button: Betopia orange */
+#auth-container button[type="submit"],
+#auth-page button[type="submit"] {
+  background-color: var(--betopia-orange) !important;
+  border-color: var(--betopia-orange) !important;
+  color: #fff !important;
+}
+#auth-container button[type="submit"]:hover,
+#auth-page button[type="submit"]:hover {
+  background-color: var(--betopia-orange-dark) !important;
+  border-color: var(--betopia-orange-dark) !important;
+}
+
+/* ── Splash / loading screen ────────────────────────────────── */
+#splash-screen {
+  background: #ffffff !important;
+}
+html.dark #splash-screen {
+  background: #0a0a0a !important;
+}
+
+/* Splash logo – transparent background, no padding, no box */
+#logo[style] {
+  width: auto !important;
+  height: 6rem !important;
+  border-radius: 0 !important;
+  object-fit: contain !important;
+  background: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+/* ── Focus rings ────────────────────────────────────────────── */
+*:focus-visible {
+  outline-color: var(--betopia-orange) !important;
+}
+
+/* ── Links ──────────────────────────────────────────────────── */
+a.text-blue-500,
+a.text-blue-600,
+.text-blue-500 {
+  color: var(--betopia-orange) !important;
+}
+
+/* ── Scrollbar (Webkit) ─────────────────────────────────────── */
+::-webkit-scrollbar-thumb {
+  background-color: #CBD5E0;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--betopia-orange-light);
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background-color: #4A5568;
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: var(--betopia-orange);
+}
+
+/* ── Top accent bar ─────────────────────────────────────────── */
+body::before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--betopia-black), var(--betopia-orange));
+  z-index: 9999;
+}

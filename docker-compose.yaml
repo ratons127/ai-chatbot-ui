@@ -8,14 +8,16 @@ services:
     restart: unless-stopped
     image: ollama/ollama:${OLLAMA_DOCKER_TAG-latest}
 
-  open-webui:
+  betopia-ai:
     build:
       context: .
       dockerfile: Dockerfile
-    image: ghcr.io/open-webui/open-webui:${WEBUI_DOCKER_TAG-main}
-    container_name: open-webui
+      args:
+        - BUILD_HASH=betopia-ai-build
+    image: betopia-ai:latest
+    container_name: betopia-ai
     volumes:
-      - open-webui:/app/backend/data
+      - betopia-ai:/app/backend/data
     depends_on:
       - ollama
     ports:
@@ -23,10 +25,11 @@ services:
     environment:
       - 'OLLAMA_BASE_URL=http://ollama:11434'
       - 'WEBUI_SECRET_KEY='
+      - 'WEBUI_NAME=Betopia AI'
     extra_hosts:
       - host.docker.internal:host-gateway
     restart: unless-stopped
 
 volumes:
   ollama: {}
-  open-webui: {}
+  betopia-ai: {}
